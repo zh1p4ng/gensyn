@@ -4,12 +4,6 @@
 LOG_FILE="$HOME/gensyn-ai-install.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
-# 检查是否为 root 或 sudo 权限
-if [ "$EUID" -ne 0 ]; then
-    echo "请使用 sudo 权限运行脚本。"
-    exit 1
-fi
-
 # 设置脚本路径变量
 SCRIPT_PATH="$HOME/gensyn-ai.sh"
 PROJECT_DIR="$HOME/rl-swarm"
